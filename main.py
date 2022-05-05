@@ -14,9 +14,9 @@ print(my_name.upper())
 
 class Dog:
 
-    def __init__(self, name):
+    def __init__(self, name, age):
         self.name = name
-        print(name)
+        self.age = age
 
     def bark(self):
         print("woof")
@@ -24,10 +24,30 @@ class Dog:
     def add_one(self, x):
         return x + 1
 
+    def get_name(self):
+        return self.name
 
-d = Dog("Tim")
+    def get_age(self):
+        return self.age
+
+    def set_age(self, age):
+        self.age = age
+
+
+d = Dog("Tim", 10)
 d.bark()
 print(d.add_one(5))
 print(type(d))
 
-d2 = Dog("Bill")
+d2 = Dog("Bill", 4)
+print(f"Dog's name is {d.name}")
+print(f"Dog two's name is {d2.name}")
+
+print(f"Dog get name is {d.get_name()}")
+print(f"Dog two get name is {d2.get_name()}")
+
+print(f"{d.get_name()}'s age is {d.get_age()}")
+print(f"{d2.get_name()}'s age is {d2.get_age()}")
+
+d.set_age(11)
+print(f"{d.get_name()}'s new age is {d.get_age()}")
