@@ -13,10 +13,21 @@ print(my_name.upper())
 
 
 class Dog:
+
+    def __init__(self, name):
+        self.name = name
+        print(name)
+
     def bark(self):
         print("woof")
 
+    def add_one(self, x):
+        return x + 1
 
-d = Dog()
+
+d = Dog("Tim")
 d.bark()
+print(d.add_one(5))
 print(type(d))
+
+d2 = Dog("Bill")
